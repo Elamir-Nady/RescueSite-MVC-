@@ -1,0 +1,52 @@
+﻿@model IEnumerable<RescueSite.Entites.Request>
+
+@{
+    ViewData["Title"] = "FinishedRequests";
+}
+<div class="card-box mb-30">
+    <h2 class="h4 pd-20 float-end" style="font-family:Lemonada"  style="text-align:right;"> الطلبات المنتهية</h2>
+    <table style="text-align:right;" class="data-table table nowrap">
+        <thead>
+            <tr>
+                <th>تاريخ الطلب</th>
+                <th>رقم السيارة</th>
+                <th>تفاصيل السيارة </th>
+                <th>الموقع </th>
+                <th>أسم العميل</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+               
+                     <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.carNum)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.CarDetails)
+                    </td>
+                     <td>
+                            @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.User.FullName)
+                    </td>
+
+               
+                   
+                   
+                   
+
+                </tr>
+                }
+
+
+
+        </tbody>
+    </table>
+</div>

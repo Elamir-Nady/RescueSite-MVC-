@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RescueSite.Entites.Request>
+
+@{
+    ViewData["Title"] = "UserRequests";
+}
+<div class="card-box mb-30">
+    <h2 class="h4 pd-20 float-end" style="font-family:Lemonada"  style="text-align:right;"> طلبات قيد المراجعة</h2>
+    <table style="text-align:right;" class="data-table table nowrap">
+        <thead>
+            <tr>
+                <th class="datatable-nosort">الأجراء</th>
+                <th>تاريخ الطلب</th>
+                <th>رقم السيارة</th>
+                <th>تفاصيل السيارة </th>
+                <th>الموقع </th>
+                <th>أسم العميل</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+                     <td>
+                        <div class="dropdown">
+                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                <i class="dw dw-more"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                <a style="font-family:Lemonada" class="dropdown-item" href=" ApproveRequest/@item.Id"><i class="dw dw-edit2"></i> موافقة</a>
+                                <a style="font-family:Lemonada" class="dropdown-item" href=" reject/@item.Id"><i class="dw dw-delete-3"></i> رفض</a>
+                            </div>
+                        </div>
+                    </td>
+                     <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.carNum)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.CarDetails)
+                    </td>
+                     <td>
+                            @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.User.FullName)
+                    </td>
+
+               
+                   
+                   
+                   
+
+                </tr>
+                }
+
+
+
+        </tbody>
+    </table>
+</div>

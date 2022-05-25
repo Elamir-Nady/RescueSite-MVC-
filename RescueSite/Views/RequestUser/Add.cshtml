@@ -1,0 +1,66 @@
+﻿@model RescueSite.ViewModels.CreateRequestVM
+
+@{
+    ViewData["Title"] = "إنشاء طلب";
+}
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="carNum" class="control-label"></label>
+                <span asp-validation-for="carNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarDetails" class="control-label"></label>
+                         
+
+                <span asp-validation-for="CarDetails" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+<div class="pd-20 card-box mb-30">
+  
+    <form asp-action="Add">
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                     <input style="font-family:Lemonada" asp-for="carNum" required style="text-align:right;"  placeholder="ادخل رقم السيارة" class="form-control" />       
+               </div>
+                           <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label" >رقم السيارة</label>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <textarea style="font-family:Lemonada" asp-for="CarDetails" style="text-align:right;"  required placeholder="ادخل تفاصيل السيارة" class="form-control"></textarea>
+            </div>
+                        <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">تفاصيل السيارة</label>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <input style="font-family:Lemonada" asp-for="Location" style="text-align:right;"  required placeholder="ادخل موقعك الأن" class="form-control" />   
+            </div>
+                        <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">موقعك الأن</label>
+
+        </div>
+               <div class="form-group row">
+        <input  type="submit" style="font-family:Lemonada" style="float:right; margin:1%"  value="إنشاء" class="btn btn-success"   role="menuitem"> 
+
+        </div>
+     </form>
+
+        
+</div>
+
+

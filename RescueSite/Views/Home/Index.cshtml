@@ -1,0 +1,212 @@
+﻿
+@{
+	Layout=null;
+}
+
+
+@model RescueSite.Entites.User
+
+@{
+    ViewData["Title"] = "الصفحة الرئيسية";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/vendors/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/vendors/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/vendors/images/favicon-16x16.png">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119386393-1');
+    </script>
+ <style>
+    @@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300;500&display=swap');
+
+</style>
+</head>
+<body style="font-family:Lemonada" class="login-page">
+
+
+    <div class="login-header box-shadow">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="brand-logo">
+                <a href="login.html">
+                    <img src="~/vendors/images/deskapp-logo.png" alt="">
+                </a>
+            </div>
+            <div class="login-menu">
+                <ul>
+@*                    <li ><a  asp-action="SignUp" >حساب جديد</a></li>
+*@                    <li ><a  asp-action="Login" >تسجيل /  تسجيل الدخول</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
+        <div class="container">
+           <div class="min-height-200px">
+				
+				
+				<div class="blog-wrap">
+					<div class="container pd-0">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="blog-list">
+									<ul>
+										<li>
+											<div class="row no-gutters">
+												<div class="col-lg-4 col-md-12 col-sm-12">
+													<div class="blog-img" style="background: url(&quot;vendors/images/img2.jpg&quot;) center center no-repeat;">
+														<img src="~/vendors/images/img2.jpg" alt="" class="bg_img" style="display: none;">
+													</div>
+												</div>
+												<div class="col-lg-8 col-md-12 col-sm-12">
+													<div class="blog-caption">
+														<h4 style="float:right"><a  style="font-family:Lemonada; text-align:center" href="#">خدمة إنقاذ سيارات في الطرق</a></h4>
+														<br />
+														<br />
+														<br />
+														<div class="blog-by">
+															<p style="text-align:center">تنتشر أوناش إنقاذ شركتنا بالعديد من الطرق الصحراوية مثل طريق مصر اسكندرية، بالقرب من مدينة السادات طوال أيام الاسبوع وعلي مدار ٢٤ ساعة … لتقدم المساعدة في حالة حدوث أعطال مفاجاة اثناء السير، وتقوم الشركة بنقل السيارات المعطلة لأي مكان يحدده العميل بنفسه ..  كما آن الفنيين لدينا علي أعلي درجة من المهارة ف التعامل مع السيارات المعطلة وعملية النقل تتم بمنتهي الدقة والمهارة </p>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										
+									<li>
+											<div class="row no-gutters">
+												<div class="col-lg-4 col-md-12 col-sm-12">
+													<div class="blog-img" style="background: url(&quot;vendors/images/img2.jpg&quot;) center center no-repeat;">
+														<img src="~/vendors/images/img3.jpg" alt="" class="bg_img" style="display: none;">
+													</div>
+												</div>
+												<div class="col-lg-8 col-md-12 col-sm-12">
+													<div class="blog-caption">
+														<h4 style="float:right"><a  style="font-family:Lemonada; text-align:center" href="#">
+															أوناش إنقاذ السيارات
+
+														</a></h4>
+														<br />
+														<br />
+														<div class="blog-by">
+															<p style="text-align:center">
+																اسرع ونش لإنقاذ السيارات فى مصر، وخدمة على مدار الساعة طوال أيام الأسبوع، بأسطول أوناش متوفر بالعديد من المناطق في محافظة القاهرة والجيزة والطرق الصحراوية وبالقرب من مدينة السادات.
+
+قادرون على الوصول لك في أسرع وقت ممكن، لدينا فريق مدرب من سائقين وفنيين على أحدث طرق وتقنيات سحب السيارات ونقلها لمساعدتك في كافة المواقف لتكون دائماً أنت وسيارتك في آمان من جميع المواقف التي قد تعرضك للمتاعب كتعطل السيارة او تلف الإطارات أو وقوع الحوادث وحالات الطوارئ أو سيارتك بحاجة إلى السحب من الحفرة أو المياه نتيجة سوء الأحوال الجوية وغيرها فقط من خلال الاتصال بالرقم وتحديد مكان تواجد السيارة ونوعها.
+
+شركتنا  لديها أفضل أنواع أوناش إنقاذ السيارات التي يمكن تتبعها لأمانك وأمان سيارتك أثناء نقلها للمكان الذي تفضله
+
+																</p>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+
+										<li>
+											<div class="row no-gutters">
+												<div class="col-lg-4 col-md-12 col-sm-12">
+													<div class="blog-img" style="background: url(&quot;vendors/images/img2.jpg&quot;) center center no-repeat;">
+														<img src="~/vendors/images/img1.jpg" alt="" class="bg_img" style="display: none;">
+													</div>
+												</div>
+												<div class="col-lg-8 col-md-12 col-sm-12">
+													<div class="blog-caption">
+														<h4 style="float:right"><a  style="font-family:Lemonada; text-align:center" href="#">
+															نبذه عن الشركة
+
+
+														</a></h4>
+														<br />
+														<br />
+														<br />
+														<div class="blog-by">
+															<p style="text-align:center">
+																شركتنا لأوناش إنقاذ السيارات … واحدة من أكبر شركات اوناش انقاذ السيارات في مصر، تم إنشاء الشركة عام 2001 بعدد سيارة واحدة فقط ثم توسعت الشركة ف مجال اوناش إنقاذ السيارات حتي وصلت عدد أوناش انقاذ السيارات لديها  الي ١٧ سيارة ونش . تنتشر اوناش الشركة بالعديد من الطرق المهمة مثل ( محور ٢٦ يوليو & طريق الواحات & طريق اسكندرية بالقرب من مدينة السادات & ) بالاضافة لبعض المناطق الهامة ف الجيزة مثل منطقة الدقي، شارع السودان ، ميدان لبنان ، شارع البطل احمد عبدالعزيز
+
+
+
+																</p>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									@*	<li>
+											<div class="row no-gutters">
+												<div class="col-lg-4 col-md-12 col-sm-12">
+													<div class="blog-img" style="background: url(&quot;vendors/images/img2.jpg&quot;) center center no-repeat;">
+														<img src="~/vendors/images/img2.jpg" alt="" class="bg_img" style="display: none;">
+													</div>
+												</div>
+												<div class="col-lg-8 col-md-12 col-sm-12">
+													<div class="blog-caption">
+														<h4 style="float:right"><a  style="font-family:Lemonada; text-align:center" href="#">
+
+
+														</a></h4>
+														<br />
+														<br />
+														<div class="blog-by">
+															<p style="text-align:center">
+
+
+																</p>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>*@
+									</ul>
+								</div>
+							
+							</div>
+							
+						</div>
+					</div>
+				</div>
+</div>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="~/vendors/scripts/core.js"></script>
+    <script src="~/vendors/scripts/script.min.js"></script>
+    <script src="~/vendors/scripts/process.js"></script>
+    <script src="~/vendors/scripts/layout-settings.js"></script>
+</body>
+</html>
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RescueSite.Entites.User>
+
+@{
+    ViewData["Title"] = "AllUsers";
+}
+
+
+
+<div class="card-box mb-30">
+    <h2 class="h4 pd-20 float-end" style="font-family:Lemonada"> كل المستخدمين  </h2>
+    <table style="text-align:right;" class="data-table table nowrap">
+        <thead>
+            <tr>
+                <th>الدرجة </th>
+                <th>البريد الإلكتروني</th>
+                <th> الهاتف  </th>
+                <th> اسم العميل</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+             
+                     <td>
+                            @Html.DisplayFor(modelItem => item.Role.Name)
+                    </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                          
+                  
+
+               
+                   
+                   
+                   
+
+                </tr>
+                }
+
+
+
+        </tbody>
+    </table>
+</div>

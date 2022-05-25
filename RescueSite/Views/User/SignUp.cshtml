@@ -1,0 +1,169 @@
+﻿@model RescueSite.Entites.User
+
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = null;
+}
+
+
+@*<div class="row">
+    <div class="col-md-6 m-auto">
+        <form asp-action="SignUp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label class="control-label">Role</label>
+                @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.Roles as SelectList, "Select Role", new {@class = "form-control" })
+
+            </div>
+            <div class="form-group row mt-3">
+                <input type="submit" value="SignUp" class="btn btn-success col-md-6 col-lg-6 col-sm-12 m-auto" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/vendors/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/vendors/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/vendors/images/favicon-16x16.png">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119386393-1');
+    </script>
+ <style>
+    @@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300;500&display=swap');
+
+</style>
+</head>
+<body style="font-family:Lemonada" class="login-page">
+    <div class="login-header box-shadow">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="brand-logo">
+                <a href="login.html">
+                    <img src="~/vendors/images/deskapp-logo.png" alt="">
+                </a>
+            </div>
+            <div class="login-menu">
+                <ul>
+                    <li><a asp-action="SignUp">تسجيل</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-7">
+                    <img src="~/vendors/images/login-page-img.png" alt="">
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="login-box bg-white box-shadow border-radius-10">
+                        <div class="login-title">
+                            <h2 style="font-family:Lemonada "  class="text-center text-primary">إنشاء حساب جديد</h2>
+                        </div>
+                        <form style="font-family:Lemonada" asp-action="SignUp">
+                            <div style="font-family:Lemonada" asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="input-group custom">
+								<input style="font-family:Lemonada" type="text" asp-for="FullName" required minlength="6" style="text-align:right;" class="form-control form-control-lg" placeholder="الأسم بالكامل">
+								<div class="input-group-append custom">
+									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
+								</div>
+							</div>
+                          
+                            <div class="input-group custom">
+								<input style="font-family:Lemonada" type="email" asp-for="Email" required class="form-control" style="text-align:right;" form-control-lg" placeholder="البريد اإلكترونى">
+								<div class="input-group-append custom">
+									<span class="input-group-text"><i class="icon-copy dw dw-email"></i></span>
+								</div>
+							</div>
+							<div class="input-group custom">
+								<input style="font-family:Lemonada" type="password" asp-for="Password" required minlength="6" style="text-align:right;" class="form-control form-control-lg" placeholder="**********">
+								<div class="input-group-append custom">
+									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
+								</div>
+							</div>
+                                <div class="input-group custom">
+								<input style="font-family:Lemonada" type="text" asp-for="Phone" required minlength="6" style="text-align:right;" pattern="^01[0125][0-9]{8}$" class="form-control form-control-lg" placeholder="01XXXXXXXXX">
+								<div class="input-group-append custom">
+									<span class="input-group-text"><i class="icon-copy dw dw-phone1"></i></span>
+								</div>
+							</div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-0">
+                                        <!--
+                                            use code for form submit
+                                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+                                        -->
+                                <input type="submit" style="font-family:Lemonada" value="تسجيل" class="btn btn-success btn-lg btn-block" />
+                                    </div>
+                                    <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">أو</div>
+                                    <div class="input-group mb-0">
+                                        <a style="font-family:Lemonada" class="btn btn-outline-primary btn-lg btn-block" asp-action="Login">تسجيل الدخول</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="~/vendors/scripts/core.js"></script>
+    <script src="~/vendors/scripts/script.min.js"></script>
+    <script src="~/vendors/scripts/process.js"></script>
+    <script src="~/vendors/scripts/layout-settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@model RescueSite.Entites.Request;
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+<div class="pd-20 card-box mb-30">
+
+    <form asp-action="View">
+         
+        
+         <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+]
+                <input asp-for="RequestStatus.Status" style="text-align:right;" readonly class="form-control" />
+
+            </div>
+            <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label"> حالة الطلب</label>
+
+        </div>
+        @if (Model.Winch != null)
+        {
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+]
+                <input asp-for="carNum" style="text-align:right;" readonly class="form-control" />
+
+            </div>
+            <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">رقم الونش</label>
+
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <textarea asp-for="CarDetails" style="text-align:right;" readonly class="form-control"></textarea>
+            </div>
+            <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">تفاصيل الونش</label>
+
+        </div>
+    }
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <input asp-for="Date" style="text-align:right;" readonly class="form-control" />
+            </div>
+            <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">تاريخ الطلب</label>
+
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <input asp-for="Price" style="text-align:right;" class="form-control" />
+                <input hidden asp-for="WinchId" style="text-align:right;" class="form-control" />
+                <input hidden asp-for="UserId" style="text-align:right;" class="form-control" />
+            </div>
+            <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label"> سعر الطلب</label>
+
+        </div>
+
+        @if (Model.StatusId == 2)
+        {
+              <div class="form-group row">
+            <input type="submit" style="float:right; margin:1%" value="إنهاء الطلب" class="btn btn-danger" role="menuitem">
+
+        </div>
+        }
+      
+    </form>
+
+
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model RescueSite.Entites.Winch
+
+@{
+    ViewData["Title"] = "AddWinch";
+}
+<div class="pd-20 card-box mb-30">
+  
+    <form asp-action="AddWinch">
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                     <input style="font-family:Lemonada" asp-for="WinchNumber" required style="text-align:right;"  placeholder="ادخل رقم الونش" class="form-control" />       
+               </div>
+                           <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label" >رقم الونش</label>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <textarea style="font-family:Lemonada" asp-for="Details" style="text-align:right;"  required placeholder="ادخل تفاصيل الونش" class="form-control"></textarea>
+            </div>
+                        <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">تفاصيل الونش</label>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <input style="font-family:Lemonada" asp-for="Phone" style="text-align:right;" pattern="^01[0125][0-9]{8}$"  required placeholder="ادخل رقم هاتف" class="form-control" />   
+            </div>
+                        <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">رقم الهاتف</label>
+
+        </div>
+           <div class="form-group row">
+        <input style="font-family:Lemonada"  type="submit" style="float:right; margin:1%"  value="إضافة" class="btn btn-success"   role="menuitem"> 
+
+        </div>
+     </form>
+
+        
+</div>
+
+

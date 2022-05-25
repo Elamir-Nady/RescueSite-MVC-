@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RescueSite.Entites.Winch>
+
+@{
+    ViewData["Title"] = "BookedWinches";
+}
+
+
+<div class="card-box mb-30">
+    <h2 class="h4 pd-20 float-end" style="text-align:right;"style="font-family:Lemonada"> الأوناش  المحجوزة</h2>
+    <table style="text-align:right;" class="data-table table nowrap">
+        <thead>
+            <tr>
+                <th class="datatable-nosort">الأجراء</th>
+                <th> تفاصيل الونش</th>
+                <th>رقم الونش</th>
+                <th> الهاتف  </th>
+                <th>الحجز </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+                     <td>
+                        <div class="dropdown">
+                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                <i class="dw dw-more"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                <a style="font-family:Lemonada" class="dropdown-item" href="/Winch/EditWinche/@item.Id"><i class="dw dw-edit2"></i> تعديل</a>
+                                <a style="font-family:Lemonada" class="dropdown-item" href="/Winch/DeleteWinches/@item.Id"><i class="dw dw-delete-3"></i> حذف</a>
+                            </div>
+                        </div>
+                    </td>
+                     <td>
+                            @Html.DisplayFor(modelItem => item.Details)
+                    </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.WinchNumber)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                            @if(item.Booke == true)
+                            {
+                                <td> محجوز  </td>
+
+                            }
+                            else
+                            {
+                               <td> غير محجوز  </td>
+
+                            }
+                  
+
+               
+                   
+                   
+                   
+
+                </tr>
+                }
+
+
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,56 @@
+﻿@model RescueSite.Entites.User
+
+@{
+    ViewData["Title"] = "AddUsers";
+}
+
+
+
+<div class="pd-20 card-box mb-30">
+  
+    <form asp-action="AddUsers">
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                     <input asp-for="FullName" style="font-family:Lemonada" required style="text-align:right;"  placeholder="ادخل الأسم بالكامل " class="form-control" />       
+               </div>
+               <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label" > الأسم بالكامل</label>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                     <input asp-for="Email"style="font-family:Lemonada" type="email" required style="text-align:right;"  placeholder="ادخل البريد الإلكتروني" class="form-control" />       
+            </div>
+                        <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">البريد الإلكتروني </label>
+
+        </div>
+          <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                     <input asp-for="Password" style="font-family:Lemonada" type="password" required style="text-align:right;"  placeholder="ادخل كلمة السر" class="form-control" />       
+            </div>
+                        <label style="text-align:right;"  class="col-sm-12 col-md-2 col-form-label">كلمة السر </label>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+                <input asp-for="Phone" style="text-align:right;"style="font-family:Lemonada" pattern="^01[0125][0-9]{8}$"  required placeholder="ادخل رقم هاتف" class="form-control" />   
+            </div>
+                        <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">رقم الهاتف</label>
+
+        </div>
+         <div class="form-group row">
+            <div class="col-sm-12 col-md-10">
+               @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.Roles as SelectList, new {@class = "form-control",style="font-family:Lemonada" })
+
+            </div>
+               <label style="text-align:right;" class="col-sm-12 col-md-2 col-form-label">اختر الدرجة </label>
+
+        </div>
+           <div class="form-group row">
+        <input  type="submit" style="float:right; margin:1%"  value="إضافة" style="font-family:Lemonada" class="btn btn-success"   role="menuitem"> 
+
+        </div>
+     </form>
+
+        
+</div>
+

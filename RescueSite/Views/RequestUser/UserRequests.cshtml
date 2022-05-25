@@ -1,0 +1,66 @@
+﻿@model IEnumerable<RescueSite.Entites.Request>
+
+@{
+    ViewData["Title"] = "كل طلباتي";
+}
+<p>
+    <a class="btn btn-success float-end" style="font-family:Lemonada" style="float:right; margin-top:1%; margin-right:1%; " asp-action="Add">أضافة طلب جديد </a>
+</p>
+
+<div class="card-box mb-30">
+    <br />
+    <table style="text-align:right;"  class="data-table table nowrap">
+        <thead>
+            <tr>
+                <th class="datatable-nosort">الأجراء</th>
+                <th> التاريخ </th>
+                <th>السعر</th>
+                <th>حالة الطلب</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+                     <td>
+                        <div class="dropdown">
+                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                <i class="dw dw-more"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                @if (item.StatusId == 2)
+                                    {
+                                    <a style="font-family:Lemonada" class="dropdown-item" href="/RequestUser/View/@item.Id"><i class="dw dw-edit3"></i> إنهاء الطلب</a>
+                                    }
+                                    @if (item.StatusId <= 1)
+                                    {
+                                    <a style="font-family:Lemonada" class="dropdown-item" href="/RequestUser/delete/@item.Id"><i class="dw dw-delete-3"></i> حذف</a>
+
+                                    }
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+
+
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.RequestStatus.Status)
+                    </td>
+
+                   
+
+                </tr>
+                }
+
+
+
+        </tbody>
+    </table>
+</div>
+
